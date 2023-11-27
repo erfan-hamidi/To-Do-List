@@ -16,7 +16,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Fetch blog posts from the API
-            fetch('127.0.0.1:8000/task/')
+            fetch('http://127.0.0.1:8000/task/')
                 .then(response => response.json())
                 .then(data => {
                     // Render blog posts
