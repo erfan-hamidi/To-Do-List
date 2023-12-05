@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from rest_framework import generics
 from .models import Task
 from .serializers import TaskSerializer
-from rest_framework import mixins
+from rest_framework import mixins, permissions
 # Create your views here.
 class TodoDetail(generics.ListAPIView):
     queryset = Task.objects.all()
@@ -24,5 +24,10 @@ class CreateTask(generics.CreateAPIView):
     queryset = Task.objects.all()
 
 class UpdateTask(generics.UpdateAPIView):
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
+
+class DeleteTask(generics.DestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
