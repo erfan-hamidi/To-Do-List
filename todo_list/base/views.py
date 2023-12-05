@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from rest_framework import generics
 from .models import Task
 from .serializers import TaskSerializer
+from rest_framework import mixins
 # Create your views here.
 class TodoDetail(generics.ListAPIView):
     queryset = Task.objects.all()
@@ -17,3 +18,8 @@ class TodoDetail(generics.ListAPIView):
 class TodoList(generics.ListAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+
+class CreateTask(generics.CreateAPIView):
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
+    
