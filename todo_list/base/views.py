@@ -22,4 +22,7 @@ class TodoList(generics.ListAPIView):
 class CreateTask(generics.CreateAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
-    
+
+class UpdateTask(generics.UpdateAPIView):
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
