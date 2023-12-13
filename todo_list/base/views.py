@@ -1,11 +1,28 @@
 from django.shortcuts import render
 from rest_framework.response import Response
+from rest_framework.status import HTTP_200_OK
 from django.http import HttpResponse
 from rest_framework import generics
 from .models import Task
-from .serializers import TaskSerializer
+from .serializers import TaskSerializer , UserSerializer
 from rest_framework import mixins, permissions
+from django.contrib.auth import get_user_model
+from rest_framework_simplejwt.tokens import RefreshToken
 # Create your views here.
+
+
+class UserRegistrationView(generics.CreateAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+    permission_classes = ()
+
+    def perform_create(self, serializer):
+        print("in def/n/n")
+        user = serializer.save()
+        refresh = RefreshToken.for_user(user)
+        data = {'refresh': str(refresh), 'access': str(refresh.access_token),}
+        return Response(data,status=HTTP_200_OK)
+
 class TodoDetail(generics.ListAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer

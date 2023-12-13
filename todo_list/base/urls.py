@@ -10,5 +10,6 @@ urlpatterns = [
     path('task-delete/<int:pk>', views.DeleteTask.as_view(), name='task-delete'),
     path('login/', TokenObtainPairView.as_view(),name='login'),
     path('verify/', TokenVerifyView.as_view(), name='verify'),
-    path('refresh', TokenRefreshView.as_view(), name='refresh')
+    path('refresh', TokenRefreshView.as_view(), name='refresh'),
+    path('register/', views.UserRegistrationView.as_view(), name='user-registration'),
 ]
