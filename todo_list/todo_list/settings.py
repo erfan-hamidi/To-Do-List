@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'base',
     'rest_framework',
     'corsheaders',
+    'rest_framework_swagger',       # Swagger
+    'drf_yasg',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
