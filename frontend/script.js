@@ -3,7 +3,7 @@ const ul = document.querySelector("ul.todos");
 const searchFormInput = document.querySelector("form.search input");
 
 //ADD NEW TODO
-const handleAddItem = (inputValue) => {
+const handleAddItem1 = (inputValue) => {
   const html = `
    <li class="list-group-item d-flex justify-content-between align-items-center">
       <span>${inputValue}</span>
