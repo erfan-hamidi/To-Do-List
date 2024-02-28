@@ -47,13 +47,12 @@ const addTodo = async (inputValue) => {
 //ADD NEW TODO
 const handleAddItem = (inputValue, todoId) => {
   const html = `
-   <li id="${todoId}" class="list-group-item d-flex justify-content-between align-items-center ">
-   <div class="d-flex align-items-center">
-      <input class="form-check-input me-2" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-      ${inputValue}
-      <div>
-      <i class="fas fa-trash-alt delete"></i>
-    </li>
+  <li id="${todoId}" class="list-group-item"> 
+  <div class="task-content">  <input class="form-check-input me-2" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+    <span>${inputValue}</span>
+  </div>
+  <i class="far fa-trash-alt delete"></i> 
+</li>
   `;
   ul.innerHTML += html;
 };

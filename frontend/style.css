@@ -2,6 +2,20 @@ body{
     background-color: #352f5b;
   }
   
+  .list-group-item {
+    display: flex;
+    justify-content: space-between; /* Distribute elements  */
+    align-items: center;
+  }
+  
+  .div { /* Give this div a more descriptive class name */
+    display: flex; /* Allow items inside to be side-by-side */
+    align-items: center;
+  }
+  
+  .delete {
+    margin-left: auto;  /* Push the delete icon to the right */
+  } 
   .container{
     max-width: 450px;
   }
@@ -29,3 +43,6 @@ body{
   .filtred{
     display: none !important;
   }
+
+
+  

@@ -1,0 +1,18 @@
+body {
+    background-color: #352f5b;
+    color: #F8F9FA; /* Light text color for better contrast */
+  }
+  
+  .card {
+    background-color: #423a6f; /* Apply list item background color to the card */
+  }
+  
+  input[type=text],
+  input[type=password] {
+    border: none; /* Remove borders as per your preference */
+    background-color: rgba(0, 0, 0, 0.2); /* Set a light transparent background */
+    color: #fff; /* Keep white text color */
+  }
+  
+  /* Add other custom styles as needed */
+  
