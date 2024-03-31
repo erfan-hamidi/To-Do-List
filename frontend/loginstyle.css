@@ -7,12 +7,28 @@ body {
     background-color: #423a6f; /* Apply list item background color to the card */
   }
   
-  input[type=text],
-  input[type=password] {
+  .email {
+    border: none; /* Remove borders as per your preference */
+    background-color: rgba(0, 0, 0, 0.2); /* Set a light transparent background */
+    color: #fff; /* Keep white text color */
+  }
+
+  .pass {
     border: none; /* Remove borders as per your preference */
     background-color: rgba(0, 0, 0, 0.2); /* Set a light transparent background */
     color: #fff; /* Keep white text color */
   }
   
+
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #352f5b;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #423a6f, rgba(106, 17, 203, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #423a6f, rgba(106, 17, 203, 1))
+    }
   /* Add other custom styles as needed */
   
