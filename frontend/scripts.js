@@ -49,7 +49,7 @@ const handleAddItem = (inputValue, todoId) => {
   const html = `
   <li id="${todoId}" class="list-group-item"> 
   <div class="task-content">  <input class="form-check-input me-2" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-    <span>${inputValue}</span>
+    <span class="task-span">${inputValue}</span>
   </div>
   <i class="far fa-trash-alt delete"></i> 
 </li>
@@ -65,6 +65,15 @@ addForm.addEventListener("submit", (e) => {
     addForm.add.value = "";
   }
 });
+
+// Function to toggle strikethrough on task completion
+const toggleStrikethrough = (checkbox, task) => {
+  if (checkbox.checked) {
+    task.innerHTML = `<s>${task.innerText}</s>`;
+  } else {
+    task.innerHTML = task.innerText.replace('<s>', '').replace('</s>', '');
+  }
+};
 
 // Function to make a DELETE request to Django API to remove a todo
 const deleteTodo = async (todoId) => {
@@ -90,6 +99,15 @@ ul.addEventListener("click", (e) => {
   }
 });
 
+// Event listener for toggling strikethrough on task completion
+ul.addEventListener("click", (e) => {
+  if (e.target.classList.contains("form-check-input")) {
+    const checkbox = e.target;
+    const task = checkbox.parentElement.querySelector(".task-span");
+    toggleStrikethrough(checkbox, task);
+  }
+});
+
 //SEARCH INPUT: PREVENT DEFAULT ACTION - LITTLE BUG I FOUND IN THE COURSE PROJECT
 searchFormInput.parentElement.addEventListener("submit", (e) =>
   e.preventDefault()
@@ -109,5 +127,9 @@ searchFormInput.addEventListener("keyup", (e) => {
   filterItems(value);
 });
 
+
+
 // Fetch todos when the page loads
 fetchTodos();
+
+

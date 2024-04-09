@@ -15,7 +15,7 @@ This is a simple Todo app built with Django Rest Framework (DRF) that allows use
 - Django
 - Django Rest Framework (DRF)
 - Django Rest Framework Simple JWT
-- PostgreSQL (optional, based on your database setup)
+- PostgreSQL 
 
 ## Setup
 
@@ -29,6 +29,7 @@ This is a simple Todo app built with Django Rest Framework (DRF) that allows use
    python manage.py createsuperuser
    python manage.py runserver
    ```
+   open frontend/login.htm
 
 ## API Endpoints
 - User registration: POST /api/register/
