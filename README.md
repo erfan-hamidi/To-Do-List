@@ -10,6 +10,9 @@ This is a simple Todo app built with Django Rest Framework (DRF) that allows use
 - Create, read, update, and delete tasks (CRUD operations)
 - JWT authentication for API endpoints
 
+![screenshot](./screenshot/Screenshot1.png)
+![screenshot](./screenshot/Screenshot2.png)
+
 ## Technologies Used
 
 - Django
